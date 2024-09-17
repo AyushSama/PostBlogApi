@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PostBlog.Core.DBEntities
 {
-    internal class PostsAyush
+    public class PostsAyush
     {
+        [Key]
+        public int postId { get; set; }
+        public string title { get; set;}
+        public string description { get; set;}
+        public int likes { get; set;}
+        public int createdBy { get; set; }
+        [ForeignKey("UsersAyush")]
+        public virtual UsersAyush UsersAyush { get; set; }
+
     }
 }

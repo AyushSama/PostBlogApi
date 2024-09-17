@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostBlog", "PostBlog\PostBl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataHelper", "DataHelper\DataHelper.csproj", "{6328ACB6-F637-497F-840B-E15968098C01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostBlog.Core", "PostBlog.Core\PostBlog.Core.csproj", "{DD86DE86-C9CB-4712-8DF4-6772D3969CB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostBlog.Data", "PostBlog.Data\PostBlog.Data.csproj", "{326AA728-DEAD-4615-93CC-A2DFB2E5ADE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{6328ACB6-F637-497F-840B-E15968098C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6328ACB6-F637-497F-840B-E15968098C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6328ACB6-F637-497F-840B-E15968098C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD86DE86-C9CB-4712-8DF4-6772D3969CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD86DE86-C9CB-4712-8DF4-6772D3969CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD86DE86-C9CB-4712-8DF4-6772D3969CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD86DE86-C9CB-4712-8DF4-6772D3969CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{326AA728-DEAD-4615-93CC-A2DFB2E5ADE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{326AA728-DEAD-4615-93CC-A2DFB2E5ADE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{326AA728-DEAD-4615-93CC-A2DFB2E5ADE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{326AA728-DEAD-4615-93CC-A2DFB2E5ADE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
