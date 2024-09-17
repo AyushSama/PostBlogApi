@@ -20,10 +20,14 @@ builder.Services.AddHttpContextAccessor();
 
 
 builder.Services.AddDbContextPool<InboxContext>(options =>
-    options.UseSqlServer("server=172.16.1.90;uid=TTA2024;pwd=Rizvi@2024;database=RizviTTA;Min Pool Size=;Max Pool Size=500;TrustServerCertificate=True;MultipleActiveResultSets=True;Command timeout=500", sqloptions =>
+    options.UseSqlServer("Server=AyushSama\\SQLEXPRESS;Database=tta_dev;Trusted_Connection=True;TrustServerCertificate=True;", sqloptions =>
     {
         sqloptions.CommandTimeout((int)TimeoutValues.ThreeMinutes);
     }));
+
+
+builder.Services.AddScoped<IPostsAyushService, PostsAyushService>();
+builder.Services.AddScoped<IPostsAyushRepo,PostsAyushRepo>();
 
 builder.Services.AddScoped<IUsersAyushService, UsersAyushService>();
 builder.Services.AddScoped<IUsersAyushRepo, UsersAyushRepo>();

@@ -21,5 +21,13 @@ namespace PostBlog.Controllers
             var list = _usersAyushService.GetAll();
             return Ok(list); // Return 200 OK with the list
         }
+
+
+        [HttpGet("getuser")]
+        public ActionResult<UsersAyush> GetUser(string username,string password)
+        {
+            var list = _usersAyushService.GetSingle(username, password);
+            return Ok(list);
+        }
     }
 }

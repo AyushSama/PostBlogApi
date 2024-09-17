@@ -7,6 +7,6 @@ namespace PostBlog.Core
     {
         public DbSet<UsersAyush> UsersAyush { get; set; }
 
-        public DbSet<PostsAyush> PostsAyushes { get; set; }
+        public DbSet<PostsAyush> PostsAyush { get; set; }
     }
 }

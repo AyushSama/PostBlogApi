@@ -20,7 +20,7 @@ namespace DataHelper.EFData.Common.Interfaces
         /// <param name="message"></param>
         /// <param name="asNoTracking"></param>
         /// <returns></returns>
-        public T GetUniqueRecordBySpec(ISpecification<T> spec, object message, bool asNoTracking = true)
+        public T GetUniqueRecordBySpec(ISpecification<T> spec, bool asNoTracking = true)
         {
             T Entity;
             if (asNoTracking)
@@ -47,7 +47,7 @@ namespace DataHelper.EFData.Common.Interfaces
         /// <param name="spec"></param>
         /// <param name="message"></param>
         /// <returns></returns>
-        public List<T> List(ISpecification<T> spec, object message)
+        public List<T> List(ISpecification<T> spec)
         {
             List<T> results = ApplySpecification(spec).AsNoTracking().ToListWithNoLockAsync().Result;
             return results;
@@ -267,7 +267,7 @@ namespace DataHelper.EFData.Common.Interfaces
         /// <param name="message"></param>
         public void Delete(ISpecification<T> spec, object message)
         {
-            var result = this.List(spec, message);
+            var result = this.List(spec);
             _dbContext.Set<T>().RemoveRange(result);
             _dbContext.SaveChanges();
         }

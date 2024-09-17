@@ -1,4 +1,5 @@
-﻿using PostBlog.Application.BusinessInterfaces;
+﻿using DataHelper.HelperClasses;
+using PostBlog.Application.BusinessInterfaces;
 using PostBlog.Core.DBEntities;
 using PostBlog.Data.EFData.Interfaces;
 using System;
@@ -22,6 +23,16 @@ namespace PostBlog.Application.BusinessServices
         {
             var result = _usersAyushRepo.ListAll();
             return result;
+        }
+
+        public UsersAyush GetSingle(string username, string password)
+        {
+            BaseSpecification<UsersAyush> spec = new BaseSpecification<UsersAyush>()
+            {
+                Criteria = e => e.userName == username && e.password == password
+            };   
+            var result = _usersAyushRepo.GetUniqueRecordBySpec(spec);
+            return result; 
         }
     }
 }

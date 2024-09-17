@@ -5,5 +5,7 @@ namespace PostBlog.Application.BusinessInterfaces
     public interface IPostsAyushService
     {
         public List<PostsAyush> GetAll();
+
+        public List<PostsAyush> GetPostOfIndividual(int userId);
     }
 }
