@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PostBlog.Application.BusinessInterfaces;
 using PostBlog.Core.DBEntities;
+using PostBlog.Core.ModelEntities;
 
 namespace PostBlog.Controllers
 {
@@ -28,6 +29,19 @@ namespace PostBlog.Controllers
         {
             var list = _usersAyushService.GetSingle(username, password);
             return Ok(list);
+        }
+
+        [HttpPost("adduser")]
+        public ActionResult AddUser([FromBody] UserModel addUser)
+        {
+            UsersAyush user = new UsersAyush()
+            {
+                userId = 0,
+                userName = addUser.userName,
+                password = addUser.password
+            };
+            _usersAyushService.InsertUser(user);
+            return Ok();
         }
     }
 }

@@ -42,7 +42,7 @@ namespace PostBlog.Application.BusinessServices
 
         public void UpdatePost(PostsAyush post)
         {
-            string[] props = { "title", "description" };
+            string[] props = { "title", "description" , "likes"};
             _postsAyushRepo.Update(post,props);   
         }
     }

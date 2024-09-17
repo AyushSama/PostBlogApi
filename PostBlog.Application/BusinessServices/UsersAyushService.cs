@@ -1,6 +1,7 @@
 ﻿using DataHelper.HelperClasses;
 using PostBlog.Application.BusinessInterfaces;
 using PostBlog.Core.DBEntities;
+using PostBlog.Core.ModelEntities;
 using PostBlog.Data.EFData.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,11 @@ namespace PostBlog.Application.BusinessServices
             };   
             var result = _usersAyushRepo.GetUniqueRecordBySpec(spec);
             return result; 
+        }
+
+        public void InsertUser(UsersAyush user)
+        {
+            _usersAyushRepo.Add(user);
         }
     }
 }

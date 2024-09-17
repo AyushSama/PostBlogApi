@@ -6,5 +6,7 @@ namespace PostBlog.Application.BusinessInterfaces
     {
         public List<UsersAyush> GetAll();
         public UsersAyush GetSingle(string userName, string password);
+
+        public void InsertUser(UsersAyush user);
     }
 }
