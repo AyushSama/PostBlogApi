@@ -35,7 +35,7 @@ namespace DataHelper.EFData.Common.Interfaces
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
-        public List<T> ListAll(object message)
+        public List<T> ListAll()
         {
             List<T> results = _dbContext.Set<T>().AsNoTracking().ToListWithNoLockAsync().Result;
             return results;
