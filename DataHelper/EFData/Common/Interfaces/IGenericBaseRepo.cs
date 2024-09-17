@@ -143,7 +143,7 @@ namespace DataHelper.EFData.Common.Interfaces
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="message"></param>
-        public void Add(T entity, object message)
+        public void Add(T entity)
         {
             _dbContext.Set<T>().Add(entity);
             _dbContext.SaveChanges();
@@ -193,7 +193,7 @@ namespace DataHelper.EFData.Common.Interfaces
         /// <param name="message"></param>
         /// <param name="properties"></param>
         /// <param name="IncludeExclude"></param>
-        public void Update(T entity, object message, string[] properties, UpdateType IncludeExclude = UpdateType.Exclude)
+        public void Update(T entity, string[] properties, UpdateType IncludeExclude = UpdateType.Exclude)
         {
             _dbContext.Entry(entity).State = UpdateType.Include == IncludeExclude ? EntityState.Unchanged : EntityState.Modified;
             foreach (string property in properties)
@@ -254,7 +254,7 @@ namespace DataHelper.EFData.Common.Interfaces
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="message"></param>
-        public void Delete(T entity, object message)
+        public void Delete(T entity)
         {
             _dbContext.Set<T>().Remove(entity);
             _dbContext.SaveChanges();

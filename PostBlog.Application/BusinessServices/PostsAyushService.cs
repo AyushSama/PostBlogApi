@@ -2,6 +2,7 @@
 using PostBlog.Application.BusinessInterfaces;
 using PostBlog.Core.DBEntities;
 using PostBlog.Data.EFData.Interfaces;
+using System.Reflection;
 
 namespace PostBlog.Application.BusinessServices
 {
@@ -11,6 +12,11 @@ namespace PostBlog.Application.BusinessServices
         public PostsAyushService(IPostsAyushRepo postsAyushRepo)
         {
             _postsAyushRepo = postsAyushRepo;
+        }
+
+        public void DeletePost(PostsAyush post)
+        {
+            _postsAyushRepo.Delete(post);
         }
 
         public List<PostsAyush> GetAll()
@@ -27,6 +33,17 @@ namespace PostBlog.Application.BusinessServices
             };
             var result = _postsAyushRepo.List(spec);
             return result;
+        }
+
+        public void InsertPost(PostsAyush post)
+        {
+            _postsAyushRepo.Add(post);
+        }
+
+        public void UpdatePost(PostsAyush post)
+        {
+            string[] props = { "title", "description" };
+            _postsAyushRepo.Update(post,props);   
         }
     }
 }
