@@ -13,7 +13,6 @@ namespace PostBlog.Core.DBEntities
 
         [ForeignKey("UsersAyush")]
         public int createdBy { get; set; }
-        public virtual UsersAyush UsersAyush { get; set; }
 
     }
 }

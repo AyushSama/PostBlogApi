@@ -31,7 +31,7 @@ namespace PostBlog.Controllers
         }
 
         [HttpPost("post")]
-        public ActionResult<PostsAyush> Post([FromBody] PostModel insertPost )
+        public ActionResult<string> Post([FromBody] PostModel insertPost )
         {   
             PostsAyush post = new PostsAyush();
             post.title = insertPost.title;
@@ -40,11 +40,11 @@ namespace PostBlog.Controllers
             post.createdBy = insertPost.createdBy;
             post.postId = 0;
             _postsAyushService.InsertPost(post);
-            return Ok(post);
+            return Ok("Post Submitted!!");
         }
 
         [HttpPost("updatepost")]
-        public ActionResult UpdatePost([FromBody] PostsAyush updatePost)
+        public ActionResult<string> UpdatePost([FromBody] PostsAyush updatePost)
         {
             PostsAyush post = new PostsAyush();
             post.title = updatePost.title;
@@ -53,12 +53,12 @@ namespace PostBlog.Controllers
             post.createdBy = updatePost.createdBy;
             post.postId = updatePost.postId;
             _postsAyushService.UpdatePost(post);
-            return Ok(post);
+            return Ok("Post Updated!!");
         }
 
 
         [HttpPost("deletepost")]
-        public ActionResult DeletePost([FromBody] PostsAyush deletePost)
+        public ActionResult<string> DeletePost([FromBody] PostsAyush deletePost)
         {
             PostsAyush post = new PostsAyush();
             post.title = deletePost.title;
@@ -67,7 +67,7 @@ namespace PostBlog.Controllers
             post.createdBy = deletePost.createdBy;
             post.postId = deletePost.postId;
             _postsAyushService.DeletePost(post);
-            return Ok();
+            return Ok("Post Deleted!!");
         }
     }
 }
