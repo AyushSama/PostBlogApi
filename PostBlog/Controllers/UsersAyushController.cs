@@ -25,14 +25,14 @@ namespace PostBlog.Controllers
 
 
         [HttpGet("getuser")]
-        public ActionResult<string> GetUser(string username,string password)
+        public ActionResult<UsersAyush> GetUser(string username,string password)
         {
-            var list = _usersAyushService.GetSingle(username, password);
-            return Ok("Login SuccessFull!!");
+            var result = _usersAyushService.GetSingle(username, password);
+            return Ok(result);
         }
 
         [HttpPost("adduser")]
-        public ActionResult AddUser([FromBody] UserModel addUser)
+        public ActionResult<string> AddUser([FromBody] UserModel addUser)
         {
             UsersAyush user = new UsersAyush()
             {
@@ -41,7 +41,7 @@ namespace PostBlog.Controllers
                 password = addUser.password
             };
             _usersAyushService.InsertUser(user);
-            return Ok();
+            return Ok("User Added Successfullyy!!");
         }
     }
 }
