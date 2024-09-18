@@ -25,10 +25,10 @@ namespace PostBlog.Controllers
 
 
         [HttpGet("getuser")]
-        public ActionResult<UsersAyush> GetUser(string username,string password)
+        public ActionResult<string> GetUser(string username,string password)
         {
             var list = _usersAyushService.GetSingle(username, password);
-            return Ok(list);
+            return Ok("Login SuccessFull!!");
         }
 
         [HttpPost("adduser")]
